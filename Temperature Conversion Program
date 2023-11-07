@@ -1,1 +1,65 @@
+import java.util.Scanner;
 
+public class T_c {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user to enter a temperature value and the original unit of measurement
+        System.out.println("Enter a temperature value: ");
+        double temperature = scanner.nextDouble();
+        //double fahrenheit = scanner.nextDouble();
+        //double kelvin = scanner.nextDouble();
+
+        System.out.println("Enter the original unit of measurement (C, F, or K): ");
+        String unit = scanner.next();
+
+        // Convert the temperature to the other two units using a switch case
+        double fahrenheit;
+        double kelvin;
+        double celsius=0;
+
+        switch (unit) 
+        {
+            case "C":
+            	
+                fahrenheit = temperature*9/5+32;
+                kelvin =temperature+273.15;
+                
+                System.out.println("The temperature in Fahrenheit is: " + fahrenheit);
+                System.out.println("The temperature in Kelvin is: " + kelvin);
+                break;
+                
+            case "F":
+            	
+            	//double fahrenheit1 = scanner.nextDouble();
+            	
+                celsius = (temperature-32)*5/9;
+                kelvin = ((temperature-32)*5/9)+273.15;
+                
+                System.out.println("The Faherenheit in Temperature is: "+celsius);
+    			System.out.println("The Faherenheit in Kelvin is: "+kelvin);
+                break;
+                
+            case "K":
+            	
+            	//double kelvin1 = scanner.nextDouble();
+            	
+                celsius = (temperature-273.15)*9/5+32;
+                fahrenheit = temperature-273.15;
+                
+                System.out.println("The Kelvin in Fahrenheit is: "+fahrenheit);
+    			System.out.println("The Kelvin in Temperature is: "+celsius);
+                break;
+                
+    
+
+                
+           default:
+            	
+                System.out.println("Invalid unit of measurement."); 
+                return; }
+    
+    
+
+    }
+}
